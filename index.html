@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,6 +17,11 @@
         --muted: #8a7b71;
         --card-bg: #ffffff;
         --border-soft: #e3d7cf;
+  
+        /* Dress code swatch colors */
+        --bordeaux: #5b1a28;
+        --sage: #b6c8a9;
+        --hunter: #33593d;
       }
   
       * {
@@ -342,6 +347,51 @@
         font-family: "Playfair Display", serif;
         color: var(--primary);
       }
+  
+      /* Dress code styles */
+      .dress-code-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 16px;
+        margin-top: 12px;
+      }
+  
+      .dress-code-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+  
+      .swatch-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+        flex-shrink: 0;
+      }
+  
+      .swatch-bordeaux {
+        background: var(--bordeaux);
+      }
+  
+      .swatch-sage {
+        background: var(--sage);
+      }
+  
+      .swatch-hunter {
+        background: var(--hunter);
+      }
+  
+      .dress-code-text-main {
+        font-size: 14px;
+        font-weight: 600;
+      }
+  
+      .dress-code-text-sub {
+        font-size: 12px;
+        color: var(--muted);
+      }
     </style>
   </head>
   <body>
@@ -422,6 +472,47 @@
               <p>
                 Through countless moments, small and big, we discovered that home is not a place but a person. On this day,
                 we choose each other again, surrounded by the people who have loved and supported us along the way.
+              </p>
+            </div>
+          </article>
+  
+          <!-- New Dress Code section -->
+          <article class="card">
+            <div class="section-label">Dress Code</div>
+            <div class="section-title">Wedding Colors</div>
+            <div class="section-subtitle">Bordeaux • Sage • Hunter Green</div>
+            <div class="section-body">
+              <p>
+                To help everyone coordinate beautifully, please use the palette below as a guide. Feel free to mix tones within these families
+                so long as they are close to the shades shown.
+              </p>
+              <div class="dress-code-grid">
+                <div class="dress-code-item">
+                  <div class="swatch-circle swatch-bordeaux"></div>
+                  <div>
+                    <div class="dress-code-text-main">Bordeaux</div>
+                    <div class="dress-code-text-sub">Deep wine red and rich burgundy tones</div>
+                  </div>
+                </div>
+  
+                <div class="dress-code-item">
+                  <div class="swatch-circle swatch-sage"></div>
+                  <div>
+                    <div class="dress-code-text-main">Sage</div>
+                    <div class="dress-code-text-sub">Soft muted green, gentle and airy</div>
+                  </div>
+                </div>
+  
+                <div class="dress-code-item">
+                  <div class="swatch-circle swatch-hunter"></div>
+                  <div>
+                    <div class="dress-code-text-main">Hunter Green</div>
+                    <div class="dress-code-text-sub">Deep forest green, elegant and bold</div>
+                  </div>
+                </div>
+              </div>
+              <p style="margin-top: 12px; font-size: 13px; color: var(--muted);">
+                Gentle note: Please avoid bright neons or very loud prints so the overall look stays cohesive in photos.
               </p>
             </div>
           </article>
@@ -565,6 +656,3 @@
     </script>
   </body>
   </html>
-
-
-Just replace your current index.html with this version and refresh the browser.
