@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farai & Kudzai</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="small-caps">The Wedding Of</p>
+      <h1>Farai &amp; Kudzai</h1>
+      <p class="date-location">12 December 2026 · Glen View, Harare</p>
+      <div id="countdown" class="countdown">
+        <div class="countdown-item">
+          <span id="days" class="count-number">0</span>
+          <span class="count-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span id="hours" class="count-number">0</span>
+          <span class="count-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes" class="count-number">0</span>
+          <span class="count-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds" class="count-number">0</span>
+          <span class="count-label">Seconds</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro">
+      <h2>Welcome</h2>
+      <p>
+        We are so grateful to share this day with our family and friends. This page has everything you need
+        to celebrate with us in Glen City.
+      </p>
+    </section>
+
+    <section class="section details">
+      <div class="details-grid">
+        <div>
+          <h2>Wedding Details</h2>
+          <ul class="details-list">
+            <li><span class="label">Date</span><span>Saturday, 12 December 2026</span></li>
+            <li><span class="label">Time</span><span>11:00am – 6:00pm</span></li>
+            <li><span class="label">Location</span><span>Glen City, Glen View, Harare</span></li>
+          </ul>
+          <p class="note">
+            Please arrive a little early so you can settle in before the ceremony begins.
+          </p>
+        </div>
+        <div class="card timeline">
+          <h3>Day Schedule</h3>
+          <ul class="timeline-list">
+            <li>
+              <span class="time">11:00</span>
+              <span class="event">Guest Arrival &amp; Welcome</span>
+            </li>
+            <li>
+              <span class="time">12:00</span>
+              <span class="event">Ceremony</span>
+            </li>
+            <li>
+              <span class="time">13:00</span>
+              <span class="event">Photos &amp; Mingling</span>
+            </li>
+            <li>
+              <span class="time">14:00</span>
+              <span class="event">Reception &amp; Lunch</span>
+            </li>
+            <li>
+              <span class="time">16:00</span>
+              <span class="event">Toasts &amp; Speeches</span>
+            </li>
+            <li>
+              <span class="time">17:00</span>
+              <span class="event">Cake &amp; Dancing</span>
+            </li>
+            <li>
+              <span class="time">18:00</span>
+              <span class="event">Farewell</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section map-section">
+      <h2>Getting There</h2>
+      <p>
+        The celebration will be held in Glen City, Glen View, Harare. Use the map below to find the venue and
+        plan your route.
+      </p>
+      <div class="map-container">
+        <!-- Previously provided Google Maps embed for Glen City -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.587284325782!2d30.947!3d-17.877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a5c3b4a2c8bb%3A0x0000000000000000!2sGlen%20View%2C%20Harare%2C%20Zimbabwe!5e0!3m2!1sen!2szw!4v1700000000000"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <section class="section rsvp">
+      <div class="card">
+        <h2>RSVP &amp; Contact</h2>
+        <p>
+          Kindly confirm your attendance with the family. If you have any questions about the day, travel, or
+          special requests, please reach out.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>With love, Farai &amp; Kudzai</p>
+  </footer>
+
+  <script>
+    // Countdown timer to 12 December 2026, 11:00 in Harare time
+    (function () {
+      const countdownEl = document.getElementById('countdown');
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      // Target date: December 12, 2026 at 11:00
+      const targetDate = new Date('2026-12-12T11:00:00+02:00').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance <= 0) {
+          countdownEl.innerHTML = '<p class="countdown-complete">Today we celebrate.</p>';
+          clearInterval(intervalId);
+          return;
+        }
+
+        const days = Math.floor(distance / (1000  60  60 * 24));
+        const hours = Math.floor((distance % (1000  60  60  24)) / (1000  60 * 60));
+        const minutes = Math.floor((distance % (1000  60  60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.textContent = days;
+        hoursEl.textContent = hours;
+        minutesEl.textContent = minutes;
+        secondsEl.textContent = seconds;
+      }
+
+      updateCountdown();
+      const intervalId = setInterval(updateCountdown, 1000);
+    })();
+  </script>
+</body>
+</html>
+
+
