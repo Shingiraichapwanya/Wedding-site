@@ -1,448 +1,570 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Farai &amp; Kudzai | Wedding Celebration</title>
-  
+    <title>Farai & Kudzai Wedding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --bone: #f5f1e8;
-        --bordeaux: #5b1a27;
-        --sage: #a8b4a5;
-        --hunter: #264329;
-        --text-main: #2b2b2b;
+        --primary: #9b6b5a;
+        --primary-light: #c89b87;
+        --accent: #d9bca8;
+        --bg: #f7f3ef;
+        --text: #2b2623;
+        --muted: #8a7b71;
+        --card-bg: #ffffff;
+        --border-soft: #e3d7cf;
       }
   
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       }
   
       body {
-        background-color: var(--bone);
-        color: var(--text-main);
+        font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
         line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
   
-      .page-wrapper {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 24px 16px 48px;
-      }
-  
-      header {
-        text-align: center;
-        padding: 32px 16px 24px;
-        border-bottom: 2px solid rgba(38, 67, 41, 0.12);
-      }
-  
-      .names {
-        font-family: "Georgia", "Times New Roman", serif;
-        font-size: 2.4rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--hunter);
-      }
-  
-      .ampersand {
-        color: var(--bordeaux);
-      }
-  
-      .tagline {
-        margin-top: 8px;
-        font-size: 0.95rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--sage);
-      }
-  
-      .date-location {
-        margin-top: 16px;
-        font-size: 1rem;
-        color: var(--bordeaux);
-        font-weight: 600;
-      }
-  
-      main {
-        margin-top: 32px;
-        display: grid;
-        grid-template-columns: 1.4fr 1fr;
-        gap: 32px;
-      }
-  
-      @media (max-width: 800px) {
-        main {
-          grid-template-columns: 1fr;
-        }
-      }
-  
-      section {
-        margin-bottom: 32px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 12px;
-        padding: 20px 18px 18px;
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
-        border: 1px solid rgba(168, 180, 165, 0.4);
-      }
-  
-      h2 {
-        font-family: "Georgia", "Times New Roman", serif;
-        font-size: 1.2rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--hunter);
-        margin-bottom: 12px;
-      }
-  
-      .accent-line {
-        width: 40px;
-        height: 3px;
-        background: var(--bordeaux);
-        border-radius: 999px;
-        margin-bottom: 16px;
-      }
-  
-      .intro p {
-        font-size: 0.98rem;
-      }
-  
-      .highlight {
-        color: var(--bordeaux);
-        font-weight: 600;
-      }
-  
-      /* Countdown */
-      .countdown {
-        text-align: center;
-      }
-  
-      .countdown-grid {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 12px;
-      }
-  
-      .count-box {
-        background: var(--hunter);
-        color: var(--bone);
-        border-radius: 10px;
-        padding: 10px 14px;
-        min-width: 72px;
-      }
-  
-      .count-number {
-        font-size: 1.4rem;
-        font-weight: 700;
+      img {
+        max-width: 100%;
         display: block;
       }
   
-      .count-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.16em;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+  
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+  
+      header.hero {
+        text-align: center;
+        padding: 40px 16px 32px;
+        position: relative;
+      }
+  
+      header.hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top, rgba(203, 164, 140, 0.12), transparent 55%);
+        z-index: -1;
+      }
+  
+      .hero-subtitle {
+        letter-spacing: 0.35em;
         text-transform: uppercase;
-        opacity: 0.85;
-      }
-  
-      .countdown-note {
-        margin-top: 10px;
-        font-size: 0.85rem;
-        color: var(--sage);
-      }
-  
-      /* Details */
-      .details-list {
-        list-style: none;
-        font-size: 0.96rem;
-      }
-  
-      .details-list li {
-        margin-bottom: 8px;
-      }
-  
-      .details-label {
-        font-weight: 600;
-        color: var(--hunter);
-      }
-  
-      /* Map */
-      .map-wrapper {
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid rgba(168, 180, 165, 0.7);
-      }
-  
-      .map-note {
-        margin-top: 8px;
-        font-size: 0.85rem;
-        color: var(--sage);
-      }
-  
-      /* RSVP */
-      .rsvp p {
-        font-size: 0.95rem;
+        font-size: 11px;
+        color: var(--muted);
         margin-bottom: 12px;
       }
   
-      form {
+      .hero-names {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(32px, 5vw, 46px);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+  
+      .hero-ampersand {
+        color: var(--primary);
+        font-weight: 600;
+      }
+  
+      .hero-date {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+  
+      .hero-location {
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--primary);
+      }
+  
+      .hero-divider {
+        width: 62px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--border-soft), transparent);
+        margin: 26px auto 0;
+      }
+  
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+        gap: 28px;
+        margin-top: 36px;
+        align-items: start;
+      }
+  
+      @media (max-width: 880px) {
+        .layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+  
+      .card {
+        background: var(--card-bg);
+        border-radius: 18px;
+        border: 1px solid rgba(227, 215, 207, 0.9);
+        padding: 20px 20px 22px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+  
+      .card + .card {
+        margin-top: 18px;
+      }
+  
+      .section-label {
+        font-size: 11px;
+        letter-spacing: 0.21em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+  
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+  
+      .section-subtitle {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 12px;
+      }
+  
+      .section-body {
+        font-size: 14px;
+        color: var(--text);
+      }
+  
+      .section-body p + p {
+        margin-top: 10px;
+      }
+  
+      .highlight {
+        font-weight: 600;
+        color: var(--primary);
+      }
+  
+      .two-column {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px 36px;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+  
+      .two-column-item-label {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+  
+      .two-column-item-main {
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+  
+      .two-column-item-sub {
+        font-size: 13px;
+        color: var(--muted);
+      }
+  
+      .registry-note {
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--muted);
+        font-style: italic;
+      }
+  
+      .countdown {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         gap: 10px;
+        margin-top: 16px;
+      }
+  
+      .countdown-box {
+        flex: 1;
+        text-align: center;
+        padding: 10px 8px 11px;
+        border-radius: 14px;
+        background: #faf6f3;
+        border: 1px solid rgba(220, 201, 187, 0.9);
+      }
+  
+      .countdown-value {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+  
+      .countdown-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+  
+      .countdown-footer {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+  
+      .rsvp-form {
+        display: grid;
+        gap: 8px;
+        margin-top: 10px;
+      }
+  
+      .rsvp-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 8px 12px;
       }
   
       label {
-        font-size: 0.85rem;
-        letter-spacing: 0.12em;
+        font-size: 12px;
+        color: var(--muted);
         text-transform: uppercase;
-        color: var(--hunter);
+        letter-spacing: 0.14em;
+        display: block;
+        margin-bottom: 3px;
       }
   
       input[type="text"],
+      input[type="email"],
       select,
       textarea {
-        padding: 8px 10px;
-        border-radius: 8px;
-        border: 1px solid rgba(168, 180, 165, 0.9);
-        font-size: 0.95rem;
-        background: rgba(245, 241, 232, 0.7);
-        outline: none;
-      }
-  
-      input[type="text"]:focus,
-      select:focus,
-      textarea:focus {
-        border-color: var(--hunter);
-        box-shadow: 0 0 0 2px rgba(38, 67, 41, 0.12);
+        width: 100%;
+        padding: 7px 9px;
+        border-radius: 10px;
+        border: 1px solid var(--border-soft);
+        font-size: 13px;
+        font-family: inherit;
+        background: #fdfaf7;
+        color: var(--text);
       }
   
       textarea {
-        min-height: 80px;
+        min-height: 70px;
         resize: vertical;
       }
   
-      .btn-primary {
-        background: var(--bordeaux);
-        color: var(--bone);
-        border: none;
-        border-radius: 999px;
-        padding: 10px 18px;
-        font-size: 0.95rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: background 0.2s ease, transform 0.1s ease;
-        align-self: flex-start;
-      }
-  
-      .btn-primary:hover {
-        background: #4a151f;
-        transform: translateY(-1px);
-      }
-  
-      .btn-primary:active {
-        transform: translateY(0);
+      .rsvp-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        gap: 10px;
+        flex-wrap: wrap;
       }
   
       .rsvp-note {
-        margin-top: 6px;
-        font-size: 0.82rem;
-        color: var(--sage);
+        font-size: 12px;
+        color: var(--muted);
       }
   
-      footer {
-        margin-top: 32px;
+      .btn-primary {
+        border: none;
+        border-radius: 999px;
+        padding: 8px 18px;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        background: var(--primary);
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.15s ease, transform 0.1s ease;
+        white-space: nowrap;
+      }
+  
+      .btn-primary:hover {
+        background: #855747;
+        transform: translateY(-1px);
+      }
+  
+      .map-wrapper {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid var(--border-soft);
+        margin-top: 10px;
+      }
+  
+      .map-wrapper iframe {
+        border: 0;
+        width: 100%;
+        height: 260px;
+      }
+  
+      .map-caption {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+  
+      .footer-note {
         text-align: center;
-        font-size: 0.8rem;
-        color: var(--sage);
+        margin-top: 30px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+  
+      .footer-note span {
+        font-family: "Playfair Display", serif;
+        color: var(--primary);
       }
     </style>
   </head>
-  
   <body>
-    <div class="page-wrapper">
-      <header>
-        <div class="names">Farai <span class="ampersand">&amp;</span> Kudzai</div>
-        <div class="tagline">Celebrate Our Wedding</div>
-        <div class="date-location">12 December 2026 · Glen City, Harare</div>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-subtitle">The Wedding Of</div>
+        <div class="hero-names">
+          FARAI <span class="hero-ampersand">&amp;</span> KUDZAI
+        </div>
+        <div class="hero-date">Saturday, 12 December 2026</div>
+        <div class="hero-location">Glen City • Harare • Zimbabwe</div>
+        <div class="hero-divider"></div>
       </header>
   
-      <main>
-        <div>
-          <!-- Intro -->
-          <section class="intro">
-            <h2>Welcome</h2>
-            <div class="accent-line"></div>
-            <p>
-              We are so excited to celebrate our wedding day with you.
-              Your presence means the world to us and we cannot wait to share
-              this moment surrounded by our family and friends.
-            </p>
-          </section>
-  
-          <!-- Countdown -->
-          <section class="countdown">
-            <h2>Countdown To Our Day</h2>
-            <div class="accent-line" style="margin-left:auto;margin-right:auto;"></div>
-            <div class="countdown-grid">
-              <div class="count-box">
-                <span id="days" class="count-number">0</span>
-                <span class="count-label">Days</span>
-              </div>
-              <div class="count-box">
-                <span id="hours" class="count-number">0</span>
-                <span class="count-label">Hours</span>
-              </div>
-              <div class="count-box">
-                <span id="minutes" class="count-number">0</span>
-                <span class="count-label">Minutes</span>
-              </div>
-              <div class="count-box">
-                <span id="seconds" class="count-number">0</span>
-                <span class="count-label">Seconds</span>
+      <main class="layout">
+        <section>
+          <article class="card">
+            <div class="section-label">Ceremony &amp; Celebration</div>
+            <div class="section-title">You Are Invited</div>
+            <div class="section-subtitle">Join Us As We Begin Our Forever</div>
+            <div class="section-body">
+              <p>
+                With joyful hearts, together with our families, we invite you to celebrate the union of
+                <span class="highlight">Farai &amp; Kudzai</span> as we exchange our vows and begin this new chapter of love.
+              </p>
+              <div class="two-column">
+                <div>
+                  <div class="two-column-item-label">Ceremony</div>
+                  <div class="two-column-item-main">Saturday, 12 December 2026</div>
+                  <div class="two-column-item-sub">3:00 PM • Glen City, Harare</div>
+                </div>
+                <div>
+                  <div class="two-column-item-label">Reception</div>
+                  <div class="two-column-item-main">Dinner &amp; Celebration</div>
+                  <div class="two-column-item-sub">To follow immediately after the ceremony</div>
+                </div>
               </div>
             </div>
-            <div id="countdown-note" class="countdown-note"></div>
-          </section>
+          </article>
   
-          <!-- RSVP -->
-          <section class="rsvp" id="rsvp">
-            <h2>RSVP</h2>
-            <div class="accent-line"></div>
-            <p>
-              Kindly let us know if you will be able to join us so we can
-              plan for you with love and care.
-            </p>
-  
-            <!-- NOTE: This is a front end only demo form.
-                 To collect responses for real, connect this form to a
-                 service like Google Forms, Formspree, or your own backend. -->
-  
-            <form action="#" method="post">
-              <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required />
+          <article class="card">
+            <div class="section-label">Countdown</div>
+            <div class="section-title">Until We Say "I Do"</div>
+            <div class="section-subtitle">Save The Date</div>
+            <div class="section-body">
+              <p>The celebration is almost here. The countdown to December 12, 2026 has begun.</p>
+              <div class="countdown" id="countdown">
+                <div class="countdown-box">
+                  <div class="countdown-value" id="days">0</div>
+                  <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="countdown-value" id="hours">0</div>
+                  <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="countdown-value" id="minutes">0</div>
+                  <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="countdown-value" id="seconds">0</div>
+                  <div class="countdown-label">Seconds</div>
+                </div>
               </div>
-  
-              <div>
-                <label for="attendance">Attendance</label>
-                <select id="attendance" name="attendance" required>
-                  <option value="">Please select</option>
-                  <option value="accept">Happily accepting</option>
-                  <option value="decline">Regretfully declining</option>
-                </select>
-              </div>
-  
-              <div>
-                <label for="diet">Dietary Requirements</label>
-                <textarea id="diet" name="diet" placeholder="Let us know about any allergies or dietary needs"></textarea>
-              </div>
-  
-              <button type="submit" class="btn-primary">Submit RSVP</button>
-            </form>
-  
-            <div class="rsvp-note">
-              If you have any questions, please reach out directly to the couple.
+              <div class="countdown-footer" id="countdown-footer"></div>
             </div>
-          </section>
-        </div>
+          </article>
   
-        <div>
-          <!-- Wedding Details -->
-          <section>
-            <h2>The Details</h2>
-            <div class="accent-line"></div>
-            <ul class="details-list">
-              <li>
-                <span class="details-label">Date:</span>
-                Saturday, 12 December 2026
-              </li>
-              <li>
-                <span class="details-label">Location:</span>
-                Glen City, Harare, Zimbabwe
-              </li>
-              <li>
-                <span class="details-label">Dress Code:</span>
-                Semi formal with a touch of <span class="highlight">Bordeaux, Sage or Hunter Green</span>
-              </li>
-            </ul>
-          </section>
-  
-          <!-- Map / Location -->
-          <section>
-            <h2>Find The Venue</h2>
-            <div class="accent-line"></div>
-            <div class="map-wrapper">
-              <!-- Corrected Google Maps iframe for Glen City -->
-              <!-- Replace the src below with the exact iframe src you copied for Glen City if needed -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.000000000000!2d30.9500000!3d-17.9000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2sGlen%20City%2C%20Harare!5e0!3m2!1sen!2szw!4v1700000000000"
-                width="100%"
-                height="260"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <article class="card">
+            <div class="section-label">Our Story</div>
+            <div class="section-title">How It All Began</div>
+            <div class="section-subtitle">Two Hearts, One Journey</div>
+            <div class="section-body">
+              <p>
+                From the very first conversation, something felt different. What began as a simple connection soon grew into
+                shared laughter, deep conversations, and a friendship that turned into love.
+              </p>
+              <p>
+                Through countless moments, small and big, we discovered that home is not a place but a person. On this day,
+                we choose each other again, surrounded by the people who have loved and supported us along the way.
+              </p>
             </div>
-            <p class="map-note">
-              Please make sure your map shows <span class="highlight">Glen City, Harare</span> and not Glen View.
-            </p>
-          </section>
-        </div>
+          </article>
+        </section>
+  
+        <aside>
+          <article class="card">
+            <div class="section-label">Location</div>
+            <div class="section-title">Glen City, Harare</div>
+            <div class="section-subtitle">Directions &amp; Map</div>
+            <div class="section-body">
+              <p>
+                The ceremony and reception will be held in
+                <span class="highlight">Glen City, Harare</span>. Please plan to arrive a little early to get settled and find your seat.
+              </p>
+              <div class="map-wrapper">
+                <iframe
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.016026002153!2d31.249!3d-17.929149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a5c1e4c4c7ff%3A0x8a01fd1cbd4023f1!2sGlen%20City%2C%20Harare%2C%20Zimbabwe!5e0!3m2!1sen!2sZW!4v1690000000000">
+                </iframe>
+              </div>
+              <div class="map-caption">
+                Tap or click on the map to open directions to Glen City, Harare in Google Maps.
+              </div>
+            </div>
+          </article>
+  
+          <article class="card">
+            <div class="section-label">Rsvp</div>
+            <div class="section-title">Will You Be Joining Us?</div>
+            <div class="section-subtitle">Kindly Respond</div>
+            <div class="section-body">
+              <form class="rsvp-form">
+                <div class="rsvp-row">
+                  <div>
+                    <label for="name">Guest Name</label>
+                    <input type="text" id="name" name="name" placeholder="Full name" />
+                  </div>
+                  <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" />
+                  </div>
+                </div>
+  
+                <div class="rsvp-row">
+                  <div>
+                    <label for="attendance">Attendance</label>
+                    <select id="attendance" name="attendance">
+                      <option value="">Please select</option>
+                      <option value="accept">Joyfully accept</option>
+                      <option value="decline">Regretfully decline</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="guests">Number Of Guests</label>
+                    <select id="guests" name="guests">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+  
+                <div>
+                  <label for="message">Message To The Couple</label>
+                  <textarea id="message" name="message" placeholder="Leave a note, blessing, or special song request"></textarea>
+                </div>
+  
+                <div class="rsvp-footer">
+                  <div class="rsvp-note">
+                    Kindly respond at your earliest convenience. This form is for display only and does not yet submit anywhere.
+                  </div>
+                  <button type="button" class="btn-primary">Submit Rsvp</button>
+                </div>
+              </form>
+            </div>
+          </article>
+  
+          <article class="card">
+            <div class="section-label">Gifts</div>
+            <div class="section-title">Your Presence Is A Gift</div>
+            <div class="section-subtitle">If You Wish To Bless Us Further</div>
+            <div class="section-body">
+              <p>
+                Your love, prayers, and presence are the greatest gifts we could ask for. If you would like to honour us with a
+                gift, a monetary blessing or contribution toward our new home would be deeply appreciated.
+              </p>
+              <p class="registry-note">
+                Kindly reach out to the couple or family for preferred giving details.
+              </p>
+            </div>
+          </article>
+        </aside>
       </main>
   
-      <footer>
-        With love,
-        Farai &amp; Kudzai
+      <footer class="footer-note">
+        With love from <span>Farai &amp; Kudzai</span> • We cannot wait to celebrate with you
       </footer>
     </div>
   
     <script>
-      // Countdown timer set for 12 December 2026 in Harare
-      // Harare is UTC+2, no daylight savings
+      // Countdown timer to 12 December 2026 at 15:00 local time
+      (function () {
+        var targetDate = new Date("December 12, 2026 15:00:00").getTime();
   
-      // Using local time string so it works in the browser without needing time zones
-      const weddingDate = new Date("December 12, 2026 10:00:00"); // adjust time if needed
+        function updateCountdown() {
+          var now = new Date().getTime();
+          var distance = targetDate - now;
   
-      function updateCountdown() {
-        const now = new Date();
-        const distance = weddingDate.getTime() - now.getTime();
+          if (distance <= 0) {
+            document.getElementById("days").textContent = 0;
+            document.getElementById("hours").textContent = 0;
+            document.getElementById("minutes").textContent = 0;
+            document.getElementById("seconds").textContent = 0;
   
-        const noteEl = document.getElementById("countdown-note");
-  
-        if (distance <= 0) {
-          document.getElementById("days").textContent = "0";
-          document.getElementById("hours").textContent = "0";
-          document.getElementById("minutes").textContent = "0";
-          document.getElementById("seconds").textContent = "0";
-          if (noteEl) {
-            noteEl.textContent = "The big day is here!";
+            var footer = document.getElementById("countdown-footer");
+            if (footer) {
+              footer.textContent = "Today we celebrate the wedding of Farai & Kudzai.";
+            }
+            clearInterval(intervalId);
+            return;
           }
-          return;
+  
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+          document.getElementById("days").textContent = days;
+          document.getElementById("hours").textContent = hours;
+          document.getElementById("minutes").textContent = minutes;
+          document.getElementById("seconds").textContent = seconds;
         }
   
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = hours;
-        document.getElementById("minutes").textContent = minutes;
-        document.getElementById("seconds").textContent = seconds;
-  
-        if (noteEl) {
-          noteEl.textContent = "Counting down to 12 December 2026 in Glen City, Harare.";
-        }
-      }
-  
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
+        updateCountdown();
+        var intervalId = setInterval(updateCountdown, 1000);
+      })();
     </script>
   </body>
   </html>
 
 
+Just replace your current index.html with this version and refresh the browser.
