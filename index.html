@@ -3,656 +3,495 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Farai & Kudzai Wedding</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <title>Tariro & Kuda | Wedding Celebration</title>
+  
     <style>
       :root {
-        --primary: #9b6b5a;
-        --primary-light: #c89b87;
-        --accent: #d9bca8;
-        --bg: #f7f3ef;
-        --text: #2b2623;
-        --muted: #8a7b71;
-        --card-bg: #ffffff;
-        --border-soft: #e3d7cf;
+        /* Amplified palette */
+        --color-ink: #222022;         /* Deep charcoal */
+        --color-ink-soft: #4a4348;    /* Softer text */
+        --color-cream: #f8f3ec;       /* Warm base */
+        --color-sand: #e5d4c0;        /* Secondary background */
+        --color-rose: #d9a4a3;        /* Romantic accent */
+        --color-berry: #8b3a4a;       /* Deep accent */
+        --color-sage: #9cae93;        /* Gentle contrast */
+        --color-gold: #c9a15b;        /* Subtle metallic accent */
   
-        /* Dress code swatch colors */
-        --bordeaux: #5b1a28;
-        --sage: #b6c8a9;
-        --hunter: #33593d;
+        --radius-soft: 18px;
+        --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.07);
+  
+        /* Type scale for a timeless feel */
+        --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+        --font-sans: "Libre Franklin", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+  
+        --size-display: clamp(2.3rem, 3.4vw, 3.1rem);
+        --size-h1: clamp(1.9rem, 2.8vw, 2.4rem);
+        --size-h2: clamp(1.5rem, 2.2vw, 1.9rem);
+        --size-h3: clamp(1.1rem, 1.6vw, 1.25rem);
+        --size-body-lg: 1.02rem;
+        --size-body: 0.98rem;
+        --size-label: 0.82rem;
+        --letter-wide: 0.12em;
       }
   
       * {
-        box-sizing: border-box;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
   
       body {
-        font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
+        font-family: var(--font-sans);
+        color: var(--color-ink);
+        background:
+          radial-gradient(circle at top left, rgba(217, 164, 163, 0.09), transparent 55%),
+          radial-gradient(circle at bottom right, rgba(156, 174, 147, 0.12), transparent 58%),
+          var(--color-cream);
         -webkit-font-smoothing: antialiased;
-      }
-  
-      img {
-        max-width: 100%;
-        display: block;
-      }
-  
-      a {
-        color: inherit;
-        text-decoration: none;
+        text-rendering: optimizeLegibility;
+        padding: 32px 16px 40px;
+        display: flex;
+        justify-content: center;
       }
   
       .page {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 32px 20px 60px;
-      }
-  
-      header.hero {
-        text-align: center;
-        padding: 40px 16px 32px;
+        width: 100%;
+        max-width: 960px;
+        background: rgba(248, 243, 236, 0.96);
+        box-shadow: var(--shadow-soft);
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        overflow: hidden;
         position: relative;
+        padding: 40px 28px 34px;
       }
   
-      header.hero::before {
+      /* Subtle framing and decorative corners */
+      .page::before,
+      .page::after {
         content: "";
         position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at top, rgba(203, 164, 140, 0.12), transparent 55%);
-        z-index: -1;
+        border-radius: 999px;
+        pointer-events: none;
       }
   
-      .hero-subtitle {
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        font-size: 11px;
-        color: var(--muted);
-        margin-bottom: 12px;
+      .page::before {
+        inset: 18px;
+        border: 1px solid rgba(201, 161, 91, 0.28);
       }
   
-      .hero-names {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(32px, 5vw, 46px);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 6px;
+      .page::after {
+        width: 120px;
+        height: 120px;
+        right: -40px;
+        top: 34%;
+        background:
+          radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), transparent 55%),
+          radial-gradient(circle at 70% 80%, rgba(139, 58, 74, 0.16), transparent 70%);
+        opacity: 0.85;
+        filter: blur(0.4px);
       }
   
-      .hero-ampersand {
-        color: var(--primary);
-        font-weight: 600;
-      }
-  
-      .hero-date {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 0.22em;
-        color: var(--muted);
-        margin-bottom: 4px;
-      }
-  
-      .hero-location {
-        font-size: 13px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--primary);
-      }
-  
-      .hero-divider {
-        width: 62px;
-        height: 1px;
-        background: linear-gradient(to right, transparent, var(--border-soft), transparent);
-        margin: 26px auto 0;
-      }
-  
-      .layout {
+      .page-inner {
+        position: relative;
+        z-index: 1;
         display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
-        gap: 28px;
-        margin-top: 36px;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+        gap: 40px;
         align-items: start;
       }
   
-      @media (max-width: 880px) {
-        .layout {
-          grid-template-columns: minmax(0, 1fr);
-        }
+      /* Header / hero */
+      .header {
+        text-align: left;
       }
   
-      .card {
-        background: var(--card-bg);
-        border-radius: 18px;
-        border: 1px solid rgba(227, 215, 207, 0.9);
-        padding: 20px 20px 22px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-      }
-  
-      .card + .card {
-        margin-top: 18px;
-      }
-  
-      .section-label {
-        font-size: 11px;
-        letter-spacing: 0.21em;
+      .eyebrow {
+        font-size: var(--size-label);
+        letter-spacing: var(--letter-wide);
         text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 6px;
-      }
-  
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: 20px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-      }
-  
-      .section-subtitle {
-        font-size: 12px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--primary);
-        margin-bottom: 12px;
-      }
-  
-      .section-body {
-        font-size: 14px;
-        color: var(--text);
-      }
-  
-      .section-body p + p {
-        margin-top: 10px;
-      }
-  
-      .highlight {
+        color: var(--color-berry);
         font-weight: 600;
-        color: var(--primary);
+        margin-bottom: 14px;
       }
   
-      .two-column {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 12px 36px;
-        margin-top: 10px;
-        font-size: 14px;
-      }
-  
-      .two-column-item-label {
-        font-size: 11px;
-        letter-spacing: 0.18em;
+      .names {
+        font-family: var(--font-serif);
+        font-size: var(--size-display);
+        letter-spacing: 0.04em;
         text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 4px;
+        line-height: 1.2;
+        color: var(--color-ink);
       }
   
-      .two-column-item-main {
-        font-weight: 600;
-        margin-bottom: 2px;
+      .ampersand {
+        color: var(--color-rose);
+        margin: 0 0.3em;
+        font-size: 0.9em;
       }
   
-      .two-column-item-sub {
-        font-size: 13px;
-        color: var(--muted);
-      }
-  
-      .registry-note {
-        margin-top: 12px;
-        font-size: 13px;
-        color: var(--muted);
-        font-style: italic;
-      }
-  
-      .countdown {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
+      .tagline {
         margin-top: 16px;
+        font-size: var(--size-body-lg);
+        color: var(--color-ink-soft);
+        line-height: 1.7;
+        max-width: 32rem;
       }
   
-      .countdown-box {
-        flex: 1;
-        text-align: center;
-        padding: 10px 8px 11px;
-        border-radius: 14px;
-        background: #faf6f3;
-        border: 1px solid rgba(220, 201, 187, 0.9);
+      .date-location {
+        margin-top: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: var(--size-body);
+        color: var(--color-ink-soft);
       }
   
-      .countdown-value {
-        font-family: "Playfair Display", serif;
-        font-size: 20px;
-        margin-bottom: 4px;
-      }
-  
-      .countdown-label {
-        font-size: 11px;
+      .date-location strong {
         text-transform: uppercase;
         letter-spacing: 0.18em;
-        color: var(--muted);
+        font-size: 0.78rem;
+        color: var(--color-berry);
+        font-weight: 600;
       }
   
-      .countdown-footer {
-        text-align: center;
-        margin-top: 10px;
-        font-size: 12px;
-        color: var(--muted);
-      }
-  
-      .rsvp-form {
-        display: grid;
-        gap: 8px;
-        margin-top: 10px;
-      }
-  
-      .rsvp-row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 8px 12px;
-      }
-  
-      label {
-        font-size: 12px;
-        color: var(--muted);
+      .pill-row {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 24px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(248, 243, 236, 0.95);
+        border: 1px solid rgba(217, 164, 163, 0.28);
+        font-size: 0.82rem;
         text-transform: uppercase;
-        letter-spacing: 0.14em;
-        display: block;
-        margin-bottom: 3px;
+        letter-spacing: 0.16em;
+        color: var(--color-ink-soft);
       }
   
-      input[type="text"],
-      input[type="email"],
-      select,
-      textarea {
-        width: 100%;
-        padding: 7px 9px;
-        border-radius: 10px;
-        border: 1px solid var(--border-soft);
-        font-size: 13px;
-        font-family: inherit;
-        background: #fdfaf7;
-        color: var(--text);
+      .pill-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--color-berry);
       }
   
-      textarea {
-        min-height: 70px;
-        resize: vertical;
+      /* Right column: schedule / details */
+      .card {
+        background:
+          radial-gradient(circle at top, rgba(233, 209, 193, 0.7), transparent 70%),
+          radial-gradient(circle at bottom right, rgba(156, 174, 147, 0.55), transparent 65%),
+          rgba(255, 255, 255, 0.9);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        padding: 22px 20px 20px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(10px);
       }
   
-      .rsvp-footer {
+      .card-heading {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-        gap: 10px;
-        flex-wrap: wrap;
+        align-items: baseline;
+        margin-bottom: 10px;
+        gap: 12px;
       }
   
-      .rsvp-note {
-        font-size: 12px;
-        color: var(--muted);
-      }
-  
-      .btn-primary {
-        border: none;
-        border-radius: 999px;
-        padding: 8px 18px;
-        font-size: 12px;
-        letter-spacing: 0.16em;
+      .card-title {
+        font-family: var(--font-serif);
+        font-size: var(--size-h2);
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        background: var(--primary);
-        color: #fff;
-        cursor: pointer;
-        transition: background 0.15s ease, transform 0.1s ease;
+        color: var(--color-ink);
+      }
+  
+      .card-subtitle {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: rgba(34, 32, 34, 0.7);
         white-space: nowrap;
       }
   
-      .btn-primary:hover {
-        background: #855747;
-        transform: translateY(-1px);
+      .divider-soft {
+        margin: 12px 0 16px;
+        height: 1px;
+        background: linear-gradient(90deg,
+          rgba(139, 58, 74, 0.15),
+          rgba(201, 161, 91, 0.24),
+          rgba(156, 174, 147, 0.2));
       }
   
-      .map-wrapper {
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid var(--border-soft);
-        margin-top: 10px;
+      .section-label {
+        font-size: 0.74rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(34, 32, 34, 0.72);
+        margin-bottom: 6px;
       }
   
-      .map-wrapper iframe {
-        border: 0;
-        width: 100%;
-        height: 260px;
-      }
-  
-      .map-caption {
-        margin-top: 8px;
-        font-size: 12px;
-        color: var(--muted);
-      }
-  
-      .footer-note {
-        text-align: center;
-        margin-top: 30px;
-        font-size: 12px;
-        color: var(--muted);
-      }
-  
-      .footer-note span {
-        font-family: "Playfair Display", serif;
-        color: var(--primary);
-      }
-  
-      /* Dress code styles */
-      .dress-code-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 16px;
-        margin-top: 12px;
-      }
-  
-      .dress-code-item {
+      .schedule {
+        list-style: none;
         display: flex;
-        align-items: center;
-        gap: 10px;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 14px;
       }
   
-      .swatch-circle {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        border: 2px solid rgba(255, 255, 255, 0.9);
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-        flex-shrink: 0;
+      .schedule-item {
+        display: grid;
+        grid-template-columns: 0.9fr 2.1fr;
+        column-gap: 16px;
+        row-gap: 2px;
+        align-items: baseline;
+        padding: 8px 10px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.9);
       }
   
-      .swatch-bordeaux {
-        background: var(--bordeaux);
+      .time {
+        font-size: 0.82rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(34, 32, 34, 0.7);
+        white-space: nowrap;
       }
   
-      .swatch-sage {
-        background: var(--sage);
+      .event-title {
+        font-family: var(--font-serif);
+        font-size: var(--size-h3);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--color-ink);
       }
   
-      .swatch-hunter {
-        background: var(--hunter);
+      .event-detail {
+        grid-column: 1 / -1;
+        font-size: 0.86rem;
+        color: var(--color-ink-soft);
+        line-height: 1.6;
+        margin-top: 2px;
       }
   
-      .dress-code-text-main {
-        font-size: 14px;
+      .note {
+        font-size: 0.82rem;
+        color: rgba(34, 32, 34, 0.9);
+        line-height: 1.6;
+        padding: 10px 12px 0;
+        border-top: 1px dashed rgba(34, 32, 34, 0.16);
+        margin-top: 6px;
+      }
+  
+      .note strong {
         font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 0.74rem;
+        display: inline-block;
+        margin-bottom: 3px;
+        color: var(--color-berry);
       }
   
-      .dress-code-text-sub {
-        font-size: 12px;
-        color: var(--muted);
+      /* RSVP footer */
+      .footer {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        font-size: 0.86rem;
+        color: var(--color-ink-soft);
+        flex-wrap: wrap;
+      }
+  
+      .monogram {
+        font-family: var(--font-serif);
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-size: 0.84rem;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(139, 58, 74, 0.35);
+        background: linear-gradient(120deg,
+          rgba(217, 164, 163, 0.18),
+          rgba(201, 161, 91, 0.12));
+        color: var(--color-ink);
+      }
+  
+      .rsvp {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        text-align: right;
+      }
+  
+      .rsvp-label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: rgba(34, 32, 34, 0.7);
+      }
+  
+      .rsvp-link {
+        font-size: 0.9rem;
+        color: var(--color-berry);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(139, 58, 74, 0.4);
+        padding-bottom: 1px;
+      }
+  
+      .rsvp-link:hover {
+        color: var(--color-ink);
+        border-color: rgba(34, 32, 34, 0.7);
+      }
+  
+      /* Responsive */
+      @media (max-width: 768px) {
+        body {
+          padding: 18px 10px 26px;
+        }
+  
+        .page {
+          padding: 26px 16px 22px;
+          border-radius: 24px;
+        }
+  
+        .page::before {
+          inset: 12px;
+        }
+  
+        .page::after {
+          display: none;
+        }
+  
+        .page-inner {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+  
+        .footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+  
+        .rsvp {
+          align-items: flex-start;
+          text-align: left;
+        }
       }
     </style>
   </head>
+  
   <body>
-    <div class="page">
-      <header class="hero">
-        <div class="hero-subtitle">The Wedding Of</div>
-        <div class="hero-names">
-          FARAI <span class="hero-ampersand">&amp;</span> KUDZAI
-        </div>
-        <div class="hero-date">Saturday, 12 December 2026</div>
-        <div class="hero-location">Glen City • Harare • Zimbabwe</div>
-        <div class="hero-divider"></div>
-      </header>
+    <main class="page">
+      <div class="page-inner">
+        <!-- Left: Intro / hero -->
+        <section class="header">
+          <p class="eyebrow">You are warmly invited</p>
   
-      <main class="layout">
-        <section>
-          <article class="card">
-            <div class="section-label">Ceremony &amp; Celebration</div>
-            <div class="section-title">You Are Invited</div>
-            <div class="section-subtitle">Join Us As We Begin Our Forever</div>
-            <div class="section-body">
-              <p>
-                With joyful hearts, together with our families, we invite you to celebrate the union of
-                <span class="highlight">Farai &amp; Kudzai</span> as we exchange our vows and begin this new chapter of love.
-              </p>
-              <div class="two-column">
-                <div>
-                  <div class="two-column-item-label">Ceremony</div>
-                  <div class="two-column-item-main">Saturday, 12 December 2026</div>
-                  <div class="two-column-item-sub">3:00 PM • Glen City, Harare</div>
-                </div>
-                <div>
-                  <div class="two-column-item-label">Reception</div>
-                  <div class="two-column-item-main">Dinner &amp; Celebration</div>
-                  <div class="two-column-item-sub">To follow immediately after the ceremony</div>
-                </div>
-              </div>
-            </div>
-          </article>
+          <h1 class="names">
+            Tariro
+            <span class="ampersand">&amp;</span>
+            Kuda
+          </h1>
   
-          <article class="card">
-            <div class="section-label">Countdown</div>
-            <div class="section-title">Until We Say "I Do"</div>
-            <div class="section-subtitle">Save The Date</div>
-            <div class="section-body">
-              <p>The celebration is almost here. The countdown to December 12, 2026 has begun.</p>
-              <div class="countdown" id="countdown">
-                <div class="countdown-box">
-                  <div class="countdown-value" id="days">0</div>
-                  <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-box">
-                  <div class="countdown-value" id="hours">0</div>
-                  <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-box">
-                  <div class="countdown-value" id="minutes">0</div>
-                  <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-box">
-                  <div class="countdown-value" id="seconds">0</div>
-                  <div class="countdown-label">Seconds</div>
-                </div>
-              </div>
-              <div class="countdown-footer" id="countdown-footer"></div>
-            </div>
-          </article>
+          <p class="tagline">
+            Join us for an evening of music, laughter, and celebration as we gather with
+            our favourite people to honour a love story still being written.
+          </p>
   
-          <article class="card">
-            <div class="section-label">Our Story</div>
-            <div class="section-title">How It All Began</div>
-            <div class="section-subtitle">Two Hearts, One Journey</div>
-            <div class="section-body">
-              <p>
-                From the very first conversation, something felt different. What began as a simple connection soon grew into
-                shared laughter, deep conversations, and a friendship that turned into love.
-              </p>
-              <p>
-                Through countless moments, small and big, we discovered that home is not a place but a person. On this day,
-                we choose each other again, surrounded by the people who have loved and supported us along the way.
-              </p>
-            </div>
-          </article>
+          <div class="date-location">
+            <strong>Saturday 14 November 2026</strong>
+            <span>Four Seasons Hotel, The Grange • Harare, Zimbabwe</span>
+          </div>
   
-          <!-- New Dress Code section -->
-          <article class="card">
-            <div class="section-label">Dress Code</div>
-            <div class="section-title">Wedding Colors</div>
-            <div class="section-subtitle">Bordeaux • Sage • Hunter Green</div>
-            <div class="section-body">
-              <p>
-                To help everyone coordinate beautifully, please use the palette below as a guide. Feel free to mix tones within these families
-                so long as they are close to the shades shown.
-              </p>
-              <div class="dress-code-grid">
-                <div class="dress-code-item">
-                  <div class="swatch-circle swatch-bordeaux"></div>
-                  <div>
-                    <div class="dress-code-text-main">Bordeaux</div>
-                    <div class="dress-code-text-sub">Deep wine red and rich burgundy tones</div>
-                  </div>
-                </div>
-  
-                <div class="dress-code-item">
-                  <div class="swatch-circle swatch-sage"></div>
-                  <div>
-                    <div class="dress-code-text-main">Sage</div>
-                    <div class="dress-code-text-sub">Soft muted green, gentle and airy</div>
-                  </div>
-                </div>
-  
-                <div class="dress-code-item">
-                  <div class="swatch-circle swatch-hunter"></div>
-                  <div>
-                    <div class="dress-code-text-main">Hunter Green</div>
-                    <div class="dress-code-text-sub">Deep forest green, elegant and bold</div>
-                  </div>
-                </div>
-              </div>
-              <p style="margin-top: 12px; font-size: 13px; color: var(--muted);">
-                Gentle note: Please avoid bright neons or very loud prints so the overall look stays cohesive in photos.
-              </p>
-            </div>
-          </article>
+          <div class="pill-row">
+            <span>Arrival 3:30 PM</span>
+            <span class="pill-dot"></span>
+            <span>Ceremony to follow</span>
+          </div>
         </section>
   
-        <aside>
-          <article class="card">
-            <div class="section-label">Location</div>
-            <div class="section-title">Glen City, Harare</div>
-            <div class="section-subtitle">Directions &amp; Map</div>
-            <div class="section-body">
-              <p>
-                The ceremony and reception will be held in
-                <span class="highlight">Glen City, Harare</span>. Please plan to arrive a little early to get settled and find your seat.
+        <!-- Right: Order of the day / details -->
+        <section class="card" aria-label="Wedding day schedule and details">
+          <div class="card-heading">
+            <h2 class="card-title">Order Of The Day</h2>
+            <span class="card-subtitle">A gentle unfolding</span>
+          </div>
+  
+          <div class="divider-soft"></div>
+  
+          <p class="section-label">Schedule</p>
+          <ul class="schedule">
+            <li class="schedule-item">
+              <span class="time">3:30 PM</span>
+              <span class="event-title">Guest Arrival</span>
+              <p class="event-detail">
+                Welcome drinks and light refreshments as you settle in and find your seat.
               </p>
-              <div class="map-wrapper">
-                <iframe
-                  loading="lazy"
-                  allowfullscreen
-                  referrerpolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.016026002153!2d31.249!3d-17.929149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a5c1e4c4c7ff%3A0x8a01fd1cbd4023f1!2sGlen%20City%2C%20Harare%2C%20Zimbabwe!5e0!3m2!1sen!2sZW!4v1690000000000">
-                </iframe>
-              </div>
-              <div class="map-caption">
-                Tap or click on the map to open directions to Glen City, Harare in Google Maps.
-              </div>
-            </div>
-          </article>
+            </li>
   
-          <article class="card">
-            <div class="section-label">Rsvp</div>
-            <div class="section-title">Will You Be Joining Us?</div>
-            <div class="section-subtitle">Kindly Respond</div>
-            <div class="section-body">
-              <form class="rsvp-form">
-                <div class="rsvp-row">
-                  <div>
-                    <label for="name">Guest Name</label>
-                    <input type="text" id="name" name="name" placeholder="Full name" />
-                  </div>
-                  <div>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" />
-                  </div>
-                </div>
-  
-                <div class="rsvp-row">
-                  <div>
-                    <label for="attendance">Attendance</label>
-                    <select id="attendance" name="attendance">
-                      <option value="">Please select</option>
-                      <option value="accept">Joyfully accept</option>
-                      <option value="decline">Regretfully decline</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="guests">Number Of Guests</label>
-                    <select id="guests" name="guests">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </select>
-                  </div>
-                </div>
-  
-                <div>
-                  <label for="message">Message To The Couple</label>
-                  <textarea id="message" name="message" placeholder="Leave a note, blessing, or special song request"></textarea>
-                </div>
-  
-                <div class="rsvp-footer">
-                  <div class="rsvp-note">
-                    Kindly respond at your earliest convenience. This form is for display only and does not yet submit anywhere.
-                  </div>
-                  <button type="button" class="btn-primary">Submit Rsvp</button>
-                </div>
-              </form>
-            </div>
-          </article>
-  
-          <article class="card">
-            <div class="section-label">Gifts</div>
-            <div class="section-title">Your Presence Is A Gift</div>
-            <div class="section-subtitle">If You Wish To Bless Us Further</div>
-            <div class="section-body">
-              <p>
-                Your love, prayers, and presence are the greatest gifts we could ask for. If you would like to honour us with a
-                gift, a monetary blessing or contribution toward our new home would be deeply appreciated.
+            <li class="schedule-item">
+              <span class="time">4:00 PM</span>
+              <span class="event-title">Wedding Ceremony</span>
+              <p class="event-detail">
+                A heartfelt exchange of vows surrounded by family and friends.
               </p>
-              <p class="registry-note">
-                Kindly reach out to the couple or family for preferred giving details.
-              </p>
-            </div>
-          </article>
-        </aside>
-      </main>
+            </li>
   
-      <footer class="footer-note">
-        With love from <span>Farai &amp; Kudzai</span> • We cannot wait to celebrate with you
+            <li class="schedule-item">
+              <span class="time">5:30 PM</span>
+              <span class="event-title">Cocktail Hour</span>
+              <p class="event-detail">
+                Canapés, conversation, and photos as the sun begins to set.
+              </p>
+            </li>
+  
+            <li class="schedule-item">
+              <span class="time">7:00 PM</span>
+              <span class="event-title">Dinner &amp; Toasts</span>
+              <p class="event-detail">
+                A seated dinner followed by toasts, stories, and well‑wishes.
+              </p>
+            </li>
+  
+            <li class="schedule-item">
+              <span class="time">9:00 PM</span>
+              <span class="event-title">Dancing</span>
+              <p class="event-detail">
+                Music, dancing, and late‑night desserts as we end the evening together.
+              </p>
+            </li>
+          </ul>
+  
+          <p class="section-label">Details</p>
+          <p class="note">
+            <strong>Attire</strong>
+            Timeless cocktail or formal wear in soft neutrals, rose, or deep berry tones
+            is warmly welcomed.
+          </p>
+          <p class="note">
+            <strong>Gifts</strong>
+            Your presence is the greatest gift. If you wish to honour us further, a
+            contribution to our home fund would be deeply appreciated.
+          </p>
+        </section>
+      </div>
+  
+      <footer class="footer">
+        <div class="monogram" aria-label="Couple monogram">
+          T • K
+        </div>
+  
+        <div class="rsvp">
+          <span class="rsvp-label">RSVP</span>
+          <a class="rsvp-link" href="#">Please confirm your attendance by 30 September 2026</a>
+        </div>
       </footer>
-    </div>
-  
-    <script>
-      // Countdown timer to 12 December 2026 at 15:00 local time
-      (function () {
-        var targetDate = new Date("December 12, 2026 15:00:00").getTime();
-  
-        function updateCountdown() {
-          var now = new Date().getTime();
-          var distance = targetDate - now;
-  
-          if (distance <= 0) {
-            document.getElementById("days").textContent = 0;
-            document.getElementById("hours").textContent = 0;
-            document.getElementById("minutes").textContent = 0;
-            document.getElementById("seconds").textContent = 0;
-  
-            var footer = document.getElementById("countdown-footer");
-            if (footer) {
-              footer.textContent = "Today we celebrate the wedding of Farai & Kudzai.";
-            }
-            clearInterval(intervalId);
-            return;
-          }
-  
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-          document.getElementById("days").textContent = days;
-          document.getElementById("hours").textContent = hours;
-          document.getElementById("minutes").textContent = minutes;
-          document.getElementById("seconds").textContent = seconds;
-        }
-  
-        updateCountdown();
-        var intervalId = setInterval(updateCountdown, 1000);
-      })();
-    </script>
+    </main>
   </body>
   </html>
